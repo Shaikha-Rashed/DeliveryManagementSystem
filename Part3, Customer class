@@ -1,0 +1,46 @@
+class Customer:
+    def __init__(self, customer_id: int, name: str, contact_info: str, address: str, account_status: str):
+        """Initialize Customer attributes."""
+        self.__customer_id = customer_id
+        self.__name = name
+        self.__contact_info = contact_info
+        self.__address = address
+        self.__account_status = account_status  # Active, Inactive
+
+    # Getter methods
+    def get_customer_id(self):
+        return self.__customer_id
+
+    def get_name(self):
+        return self.__name
+
+    def get_contact_info(self):
+        return self.__contact_info
+
+    def get_address(self):
+        return self.__address
+
+    def get_account_status(self):
+        return self.__account_status
+
+    # Setter methods
+    def set_contact_info(self, contact_info: str):
+        self.__contact_info = contact_info
+
+    def set_address(self, address: str):
+        self.__address = address
+
+    def set_account_status(self, status: str):
+        self.__account_status = status
+
+    def create_order(self):
+        """Creates a new order for the customer."""
+        pass  # This function should create an order and link it to the customer
+
+    def track_order_status(self, order_number: int):
+        """Checks the status of an existing order."""
+        pass  # This function should return the order status
+
+    def update_customer_info(self):
+        """Updates customer details such as contact info or address."""
+        pass  # This function should allow modification of customer details

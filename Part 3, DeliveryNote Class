@@ -1,0 +1,43 @@
+class DeliveryNote:
+    def __init__(self, note_number: int, order_details: Order, date_issued: str, delivery_method: str, delivery_status: str):
+        """Initialize Delivery Note attributes."""
+        self.__note_number = note_number
+        self.__order_details = order_details  # Associated Order
+        self.__date_issued = date_issued
+        self.__delivery_method = delivery_method  # Courier, Pickup
+        self.__delivery_status = delivery_status  # Pending, Out for Delivery, Delivered
+
+    # Getter methods
+    def get_note_number(self):
+        return self.__note_number
+
+    def get_order_details(self):
+        return self.__order_details
+
+    def get_date_issued(self):
+        return self.__date_issued
+
+    def get_delivery_method(self):
+        return self.__delivery_method
+
+    def get_delivery_status(self):
+        return self.__delivery_status
+
+    # Setter methods
+    def set_delivery_method(self, delivery_method: str):
+        self.__delivery_method = delivery_method
+
+    def set_delivery_status(self, delivery_status: str):
+        self.__delivery_status = delivery_status
+
+    def generate_note(self):
+        """Creates a delivery note based on the order details."""
+        pass  # This function should generate a delivery note for shipment
+
+    def print_note(self):
+        """Prints the delivery note for dispatching."""
+        pass  # This function should format and print the delivery note
+
+    def update_delivery_status(self, status: str):
+        """Updates the delivery status (e.g., from Out for Delivery to Delivered)."""
+        pass  # This function should change the status in the system

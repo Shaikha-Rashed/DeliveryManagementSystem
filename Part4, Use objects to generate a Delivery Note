@@ -1,0 +1,102 @@
+#  Step 1: Define Classes
+class Customer:
+    """Represents a customer who places an order."""
+    def __init__(self, customer_id, name, contact_info, address):
+        """Initialize Customer attributes."""
+        self.customer_id = customer_id
+        self.name = name
+        self.contact_info = contact_info
+        self.address = address
+
+class Order:
+    """Represents an order placed by a customer."""
+    def __init__(self, order_number, order_date, items, total_cost, status):
+        """Initialize Order attributes."""
+        self.order_number = order_number
+        self.order_date = order_date
+        self.items = items
+        self.total_cost = total_cost
+        self.status = status
+
+class DeliveryNote:
+    """Represents a delivery note generated for an order."""
+    def __init__(self, note_number, order, date_issued, delivery_method, delivery_status):
+        """Initialize DeliveryNote attributes."""
+        self.note_number = note_number
+        self.order = order
+        self.date_issued = date_issued
+        self.delivery_method = delivery_method
+        self.delivery_status = delivery_status
+
+class Notification:
+    """Represents a notification sent to the customer about an order update."""
+    def __init__(self, notification_id, message, date_sent, recipient):
+        """Initialize Notification attributes."""
+        self.notification_id = notification_id
+        self.message = message
+        self.date_sent = date_sent
+        self.recipient = recipient
+
+#  Step 2: Create Objects
+customer = Customer(1001, "Shaikha Rashed", "shaikha@example.com", "Dubai, UAE")
+
+order = Order(
+    order_number=5001,
+    order_date="2025-03-01",
+    items=["Camera", "Tripod", "Memory Card"],
+    total_cost=3200.75,
+    status="Shipped"
+)
+
+delivery_note = DeliveryNote(
+    note_number=2001,
+    order=order,
+    date_issued="2025-03-02",
+    delivery_method="Courier",
+    delivery_status="Out for Delivery"
+)
+
+notification = Notification(
+    notification_id=3001,
+    message="Your order is out for delivery!",
+    date_sent="2025-03-02",
+    recipient="shaikha@example.com"
+)
+
+#  Step 3: Generate and Display Delivery Note
+def generate_delivery_note():
+    """Displays a formatted delivery note using object data."""
+    
+    print("=" * 40)
+    print("           DELIVERY NOTE")
+    print("=" * 40)
+    
+    # Delivery note details
+    print(f"Delivery Note Number: {delivery_note.note_number}")
+    print(f"Date Issued: {delivery_note.date_issued}")
+    print(f"Delivery Method: {delivery_note.delivery_method}")
+    print(f"Delivery Status: {delivery_note.delivery_status}")
+    
+    # Customer details
+    print("\nCustomer Details:")
+    print(f"Name: {customer.name}")
+    print(f"Contact: {customer.contact_info}")
+    print(f"Address: {customer.address}")
+
+    # Order details
+    print("\nOrder Details:")
+    print(f"Order Number: {order.order_number}")
+    print(f"Order Date: {order.order_date}")
+    print(f"Items: {', '.join(order.items)}")
+    print(f"Total Cost: AED {order.total_cost:.2f}")
+    print(f"Order Status: {order.status}")
+
+    # Notification details
+    print("\nNotification Sent:")
+    print(f"Message: {notification.message}")
+    print(f"Date Sent: {notification.date_sent}")
+    
+    print("=" * 40)
+
+#  Step 4: Call the function to display the delivery note
+generate_delivery_note()

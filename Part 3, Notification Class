@@ -1,0 +1,43 @@
+class Notification:
+    def __init__(self, notification_id: int, message: str, date_sent: str, recipient: str, notification_type: str):
+        """Initialize Notification attributes."""
+        self.__notification_id = notification_id
+        self.__message = message
+        self.__date_sent = date_sent
+        self.__recipient = recipient  # Email or phone number
+        self.__notification_type = notification_type  # Email, SMS, Push Notification
+
+    # Getter methods
+    def get_notification_id(self):
+        return self.__notification_id
+
+    def get_message(self):
+        return self.__message
+
+    def get_date_sent(self):
+        return self.__date_sent
+
+    def get_recipient(self):
+        return self.__recipient
+
+    def get_notification_type(self):
+        return self.__notification_type
+
+    # Setter methods
+    def set_message(self, message: str):
+        self.__message = message
+
+    def set_notification_type(self, notification_type: str):
+        self.__notification_type = notification_type
+
+    def send_notification(self):
+        """Sends the notification to the recipient."""
+        pass  # This function should send an email or SMS to the customer
+
+    def generate_message(self, event: str):
+        """Generates a notification message based on an order update event."""
+        pass  # This function should create a message depending on the order status
+
+    def get_notification_details(self):
+        """Retrieves details of a notification."""
+        pass  # This function should return notification history and details
